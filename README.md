@@ -16,13 +16,15 @@
 ## 可修改变量
 | 环境变量       | 默认值         | 建议         |
 | ------------- |:-------------:|:-----------:|
-| VERSION | 1.5.6  | 不建议修改   |
+| VERSION | 1.7.2  | 建议修改  |
 | HOME | /home | 可修改 |  
 | PORT | 3000  | 可修改 | 
 | ADMIN_EMAIL | me@jinfeijie.cn  | 建议修改 | 
-| DB_SERVER | mongo(127.0.0.1)  | 不建议修改 |
-| DB_NAME | yapi  | 不建议修改 |
-| DB_PORT | 27017 | 不建议修改|
+| DB_SERVER | mongo(127.0.0.1)  | 建议修改 |
+| DB_NAME | yapi  | 建议修改 |
+| DB_USER | yapi  | 建议修改 |
+| DB_PASS | yapi  | 建议修改 |
+| DB_PORT | 27017 | 建议修改|
 | VENDORS | ${HOME}/vendors | 不建议修改  | 
 
 
@@ -38,17 +40,19 @@ services:
     # build: ./
     container_name: yapi
     environment:
-      - VERSION=1.5.6
+      - VERSION=1.7.2
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
       - PORT=3000
       - ADMIN_EMAIL=me@jinfeijie.cn
       - DB_SERVER=mongo
       - DB_NAME=yapi
+      - DB_USER=yapi
+      - DB_PASS=yapi
       - DB_PORT=27017
     # restart: always
     ports:
-      - 127.0.0.1:3000:3000
+      - 3000:3000
     volumes:
       - ~/data/yapi/log/yapi.log:/home/vendors/log # log dir
     depends_on:
