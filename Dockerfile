@@ -6,6 +6,8 @@ ENV PORT        3000
 ENV ADMIN_EMAIL "me@jinfeijie.cn"
 ENV DB_SERVER 	"mongo"
 ENV DB_NAME 	"yapi"
+ENV DB_USER 	"yapi"
+ENV DB_PASS 	"yapi"
 ENV DB_PORT 	27017
 ENV VENDORS 	${HOME}/vendors
 ENV GIT_URL     https://github.com/YMFE/yapi.git
